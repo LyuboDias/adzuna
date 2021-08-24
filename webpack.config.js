@@ -1,31 +1,35 @@
 // require the path module and the html-webpack-plugin
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
-  // specify an entry
+  mode: "production",
   entry: "./src/index.js",
-
-  //  specify the output path
   output: {
-    path: path.join(__dirname, "/dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundlefile.js",
   },
-
-  // specify the test files and files to exclude
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        // specify the loader as babel-loader
+        // specify the test files and files to exclude
+        test: /\.js$/i,
+        include: path.resolve(__dirname, "src"),
         use: {
+          // specify the loader as babel-loader to transpile latest javascript syntaxes and JSX
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, "src"),
+        //  loaders
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
-
   // all webpack plugins
   plugins: [
     new HtmlWebpackPlugin({
