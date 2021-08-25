@@ -11,18 +11,21 @@ import { render, screen, cleanup } from "@testing-library/react";
 import ContactForm from "../Form";
 // using renderer as snapshot to verify that the component hasnt changed since last test
 import renderer from "react-test-renderer";
+// import { act, renderHook } from "@testing-library/react-hooks";
 
+// clean up tree after every test
 afterEach(() => {
   cleanup();
 });
 
+// testing if component renders properly
 test("should render Form component", () => {
   render(<ContactForm />); // rendering the component
   const formElement = screen.getByTestId("contact-form"); // get component by id from the tree
-  expect(formElement).toBeInTheDocument(); // testing if component renders
+  expect(formElement).toBeInTheDocument();
 });
 
-// renderer test
+// renderer test with snapshot
 test("matches snapshot", () => {
   const tree = renderer.create(<ContactForm />).toJSON();
   expect(tree).toMatchSnapshot(); // creating snapshot of the entire component

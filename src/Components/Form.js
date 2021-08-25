@@ -16,7 +16,7 @@ let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 // adding custome CSS
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   input: {
     margin: "10px 0px",
     border: "2px solid #36096d",
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: "linear-gradient(to right, #37d5d6, #36096d)",
     margin: "10px 0px",
   },
-}));
+});
 
 // From component
 function ContactForm() {
@@ -37,6 +37,7 @@ function ContactForm() {
 
   const span = useRef(null); // using Ref for the 'span' where we display the Chars Counter
   const textArea = useRef(null);
+  const span2 = useRef(null);
 
   useEffect(() => {
     // using ternary operator to check text area value
@@ -44,6 +45,24 @@ function ContactForm() {
     //  displaying numbers of Chars typed in text area
     span.current.innerHTML = string + " chars";
     // TODO save in variable all white space and display into span = words counter
+  }),
+    [];
+
+  // words counting function
+  useEffect(() => {
+    let text = textArea.current.value ? textArea.current.value : 0;
+    let wordCount = 0; // set a counter
+    // loop over text input
+    for (let i = 0; i <= text.length; i++) {
+      // if input = 0 => reset the counter
+      if (text.length == 0) {
+        span2.current.innerHTML = "0 words";
+        // checks if empty space AND prev char is NOT EMPTY space only then Increment
+      } else if (text.charAt(i) == " " && text.charAt(i - 1) != " ") {
+        wordCount++;
+      }
+      span2.current.innerHTML = wordCount + " words";
+    }
   }),
     [];
 
@@ -109,6 +128,7 @@ function ContactForm() {
             <Typography variant="caption" className=" text-red-500 font-light">
               {errors.fullName?.message}
             </Typography>
+            <br />
             <label id="email" htmlFor="email">
               Email
             </label>
@@ -154,11 +174,10 @@ function ContactForm() {
                 {errors.description?.message}
               </Typography>
               {/* span displaying the Chars Counter */}
-              <span
-                className="text-gray-500 absolute -bottom-2 right-0"
-                id="counter"
-                ref={span}
-              ></span>
+              <span className="text-gray-500" id="counter" ref={span}></span>
+              <p className="text-gray-500 " id="counter2" ref={span2}>
+                0 words
+              </p>
             </div>
             <br />
             <Button

@@ -2,11 +2,11 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="sm:flex content-center "
+  className="sm:flex items-center h-full"
   data-testid="contact-form"
 >
   <div
-    className="my-auto h-content bg-gray-100 rounded  max-h-sm py-12 px-10  max-w-sm"
+    className=" bg-gray-100 rounded  h-content py-12 px-10  max-w-sm"
   >
     <h3
       className="MuiTypography-root text-center text-blue-900  pb-6 font-light MuiTypography-h3"
