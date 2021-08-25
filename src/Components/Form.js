@@ -65,12 +65,12 @@ function ContactForm() {
 
   return (
     // adding test-id to our wrapper
-    <div className="sm:flex content-center " data-testid="contact-form">
+    <div className="sm:flex items-center h-full" data-testid="contact-form">
       {/* using ternary operator to check Form state and add the correct class (fade away) */}
       <div
         className={`${
           formChecked
-            ? "my-auto h-content bg-gray-100 rounded  max-h-sm py-12 px-10  max-w-sm"
+            ? " bg-gray-100 rounded  h-content py-12 px-10  max-w-sm"
             : "hidden"
         }`}
       >
