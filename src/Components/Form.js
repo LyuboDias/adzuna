@@ -43,8 +43,17 @@ function ContactForm() {
     // using ternary operator to check text area value
     let string = textArea.current.value ? textArea.current.value.length : 0;
     //  displaying numbers of Chars typed in text area
-    span.current.innerHTML = string + " chars";
-    // TODO save in variable all white space and display into span = words counter
+    //  if chars under 20 we add color RED
+    if (string < 20) {
+      span.current.classList.remove("text-gray-500");
+      span.current.classList.add("text-red-500");
+      span.current.innerHTML = string + " chars";
+    } else {
+      // when chars over 20 RED color dissappear
+      span.current.classList.remove("text-red-500");
+      span.current.classList.add("text-gray-500");
+      span.current.innerHTML = string + " chars";
+    }
   }),
     [];
 
@@ -61,6 +70,7 @@ function ContactForm() {
       } else if (text.charAt(i) == " " && text.charAt(i - 1) != " ") {
         wordCount++;
       }
+
       span2.current.innerHTML = wordCount + " words";
     }
   }),
@@ -173,11 +183,14 @@ function ContactForm() {
               >
                 {errors.description?.message}
               </Typography>
+              <br />
               {/* span displaying the Chars Counter */}
-              <span className="text-gray-500" id="counter" ref={span}></span>
-              <p className="text-gray-500 " id="counter2" ref={span2}>
-                0 words
-              </p>
+              <div className="flex justify-between">
+                <span className="text-gray-500" id="counter" ref={span}></span>
+                <p className="text-gray-500 " id="counter2" ref={span2}>
+                  0 words
+                </p>
+              </div>
             </div>
             <br />
             <Button
@@ -219,7 +232,7 @@ function ContactForm() {
               variant="subtitle1"
               className="text-center text-blue-900 mb-2 font-light"
             >
-              We have recived your from
+              We have recived your form
             </Typography>
           </div>
         </div>
