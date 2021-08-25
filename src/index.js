@@ -5,7 +5,8 @@ import "./style.css";
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* importing App containing all components */}
     <App />
   </React.StrictMode>,
-  document.getElementById("App")
+  document.getElementById("App") // render into the main div with id='App'
 );

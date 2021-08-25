@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="sm:flex content-center "
+  data-testid="contact-form"
+>
+  <div
+    className="my-auto h-content bg-gray-100 rounded  max-h-sm py-12 px-10  max-w-sm"
+  >
+    <h3
+      className="MuiTypography-root text-center text-blue-900  pb-6 font-light MuiTypography-h3"
+    >
+      Contact Form
+    </h3>
+    <form
+      autoComplete="off"
+      onSubmit={[Function]}
+      title="contact form"
+    >
+      <label
+        htmlFor="fullName"
+        id="fullName"
+      >
+        Full Name
+      </label>
+      <input
+        aria-describedby="enter full name"
+        className="w-full border-2 py-4 border-blue-900 bg-gray-100 px-4 rounded my-3 focus:outline-none"
+        name="fullName"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Linus Torvalds"
+        title="enter full name"
+        type="text"
+      />
+      <span
+        className="MuiTypography-root  text-red-500 font-light MuiTypography-caption"
+      />
+      <label
+        htmlFor="email"
+        id="email"
+      >
+        Email
+      </label>
+      <input
+        aria-describedby="enter your email"
+        className="w-full border-2 py-4 border-blue-900 bg-gray-100 px-4 rounded my-3 focus:outline-none"
+        name="email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="ltorvalds@linux.com"
+        title="enter your email"
+        type="text"
+      />
+      <span
+        className="MuiTypography-root  text-red-500 font-light MuiTypography-caption"
+      />
+      <div
+        className="relative"
+      >
+        <label
+          htmlFor="description"
+          id="description"
+        >
+          Your message
+        </label>
+        <textarea
+          aria-describedby="enter your message here"
+          className="w-full border-2 py-5 border-blue-900 bg-gray-100 px-4 rounded my-3 focus:outline-none "
+          cols="50"
+          id="description"
+          name="description"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="Linux is powerful, flexible, secure, reliable, stable, fun… than Windows."
+          rows="4"
+          title="enter your message here"
+        />
+        <span
+          className="MuiTypography-root  text-red-500 font-light MuiTypography-caption"
+        />
+        <span
+          className="text-gray-500 absolute -bottom-2 right-0"
+          id="counter"
+        />
+      </div>
+      <br />
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submit-4 MuiButton-containedSecondary MuiButton-fullWidth"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        title="submit button"
+        type="submit"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <span
+            className="MuiTypography-root text-center text-white font-light MuiTypography-button"
+          >
+            Submit
+          </span>
+        </span>
+      </button>
+    </form>
+  </div>
+  <div
+    className="hidden"
+    style={
+      Object {
+        "opacity": 0,
+        "transform": "scale(0.75, 0.5625)",
+        "transformOrigin": "0 0 0",
+        "visibility": "hidden",
+      }
+    }
+  >
+    <div
+      className=" h-content bg-gray-100 rounded  max-h-sm py-4 px-10  max-w-sm "
+    >
+      <h4
+        className="MuiTypography-root text-center text-3xl text-blue-900  mb-4 font-light MuiTypography-h4"
+      >
+        Thank You
+      </h4>
+      <h6
+        className="MuiTypography-root text-center text-blue-900 mb-2 font-light MuiTypography-subtitle1"
+      >
+        We have recived your from
+      </h6>
+    </div>
+  </div>
+</div>
+`;
