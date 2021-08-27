@@ -4,9 +4,9 @@ import App from "./App.js";
 import "./style.css";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div className="sm:my-auto">
     {/* importing App containing all components */}
     <App />
-  </React.StrictMode>,
+  </div>,
   document.getElementById("App") // render into the main div with id='App'
 );

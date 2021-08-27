@@ -12,8 +12,5 @@ export const formSchema = yup.object().shape({
     .string()
     .min(20)
     .required()
-    .matches(
-      "^[A-Za-z0-9s!@#$%^&*()_+=-`~\\][{}|';:/.,?><]*$",
-      "Non valid character used"
-    ), // check if not nill, min 20 chars and emojis not allowed, still few spec chars not allowed
+    .matches("^[A-Za-zÀ-ȕ0-9(),-_.+=-`~!£$%&, ]*$", "Non valid character used"), // check if not nill, min 20 chars and emojis not allowed, still few spec chars not allowed
 });
