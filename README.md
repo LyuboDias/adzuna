@@ -39,4 +39,5 @@
 
 ## How to run tests:
 
-- 'npm run test'
+- Jest 'npm run test' (tetsing if component renders, checking against snapshot for any changes)
+- Cypress 'npm run cypress' (runs in chrome with viewport of 1280 x 800, testing inputs for Name, Email and Description and after submiting checks for 'Thank You' modal)
