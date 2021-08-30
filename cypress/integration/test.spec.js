@@ -1,6 +1,6 @@
 describe("Test happy path", function () {
   // synchronous 'it' block
-  it("Input Full Name", function () {
+  it("Test inputs,submit and Thank you modal", function () {
     cy.visit("localhost:8080/"); // get URL to listen on
     cy.viewport("macbook-13"); // set viewport
     // find input for name and insert random string when callling randomInput()
